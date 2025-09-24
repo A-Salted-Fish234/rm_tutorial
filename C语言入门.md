@@ -319,14 +319,110 @@ int main()
 
 
 
+# 5.数组，字符串
 
 
-# 5.函数、分支、调试
+
+- *如何定义数组和使用数组*
+
+**例程六：存储五位同学的成绩并根据需求调用**
+
+```c
+#include <stdio.h>
+int main()
+{
+    //注：若定义时不赋值，则必须输入数组大小
+    int grade[]={88,89,73,99,91};
+    // int grade[5];
+    // grade[0]=88;
+    // grade[1]=89;
+    // grade[2]=73;
+    // grade[3]=99;
+    // grade[4]=91;
+    int n;
+    printf("Enter the number of student:");
+    scanf("%d",&n);
+    printf("The grade of student %d is:%d",n,grade[n-1]);
+    return 0;
+}
+
+```
+
+- *如何输入字符串？*
+
+**例程七：greet**
+
+```c
+#include <stdio.h>
+int main() 
+{
+    printf("What's your name?\n");
+    char name[50];
+    scanf("%49s", name); // Read a string input safely
+    printf("Hello, %s!\n", name);
+}
+```
+
+- *如何处理字符串？*
+
+**例程八：字符串的长度，拼接，比较**
+
+```c
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char str1[] = "hello";
+    char str2[] = "world";
+    printf("%d  %d\n",strlen(str1),strlen(str2));
+
+    char result[50];
+    strcpy(result,str1);	//将str1复制粘贴到result
+    strcat(result,",  ");	//拼接后面的变量到result后
+    strcat(result,str2);	//strcat会自动处理\0
+    printf("%s\n",result);
+    printf("\0%s\n",result);//认识\0的作用
+
+    char str3[] = "apple";
+    char str4[] = "banana";
+    
+    int end = strcmp(str3,str4);	//根据ascii码一个一个比较
+    if(end > 0)						//若str3大于str4则返回正数
+    {
+        printf("%s more than %s\n",str3,str4);
+    }
+    else if(end < 0)				//若str3小于str4则返回负数
+    {
+        printf("%s less than %s\n",str3,str4);
+    }
+    else							//若完全相同则返回0
+    {
+        printf("%s equal to %s\n",str3,str4);
+    }
+    return 0;
+}
+```
+
+
+
+
+
+数组
+
+字符串输入与输出
+
+字符串基本操作
+
+strcpy
+
+strcat
+
+# 6.函数、分支、调试
 
 - *每次计算面积都要写一遍式子吗？*
 - 能不能一个程序既计算圆的面积又计算正方形面积？
 
-**例程六：计算圆的面积和正方形面积**
+**例程九：计算圆的面积和正方形面积**
 
 ```c
 #include <stdio.h>
@@ -361,7 +457,7 @@ int main()
 
 - *普通函数能传递参数，main能不能？*
 
-**例程七：更好用的加法计算器**
+**例程十：更好用的加法计算器**
 
 注：此例程需要在终端运行时同时传入两个整数参数
 
@@ -393,11 +489,11 @@ ASCII
 
 终端运行
 
-# 6.数组、循环
+# 7.循环
 
 - *如果有好多个图形的面积需要计算，有没有更友好的写法？*
 
-**例程八：循环计算多个面积**
+**例程十一：循环计算多个面积**
 
 ```c
 #include <stdio.h>
@@ -420,7 +516,7 @@ int main()
 
 - *如果一开始并不知道我要计算几个面积怎么办？*
 
-**例程九：自定义计算面积数**
+**例程十二：自定义计算面积数**
 
 ```c
 #include <stdio.h>
@@ -464,11 +560,11 @@ int main(int count,char *argv[])
 
 代码规范
 
-# 7.字符串
+# 8.字符串
 
 - *如何输入字符串？*
 
-**例程十：greet**
+**例程十三：greet**
 
 ```c
 #include <stdio.h>
@@ -483,7 +579,7 @@ int main()
 
 - *如何处理字符串？*
 
-**例程十一：字符串的长度，拼接，比较**
+**例程十四：字符串的长度，拼接，比较**
 
 ```c
 #include <stdio.h>
@@ -535,11 +631,11 @@ strcpy
 
 strcat
 
-# 8.结构体
+# 9.结构体
 
 - *怎么将不同类型数据集成到一个变量中
 
-**例程十二：储存学生信息并打印**
+**例程十五：储存学生信息并打印**
 
 ```c
 #include <stdio.h>
@@ -596,19 +692,19 @@ int main()
 
 代码规范与可读性
 
-# 9.指针、地址
+# 10.指针、地址
 
 
 
-# 10.数组深入
+# 11.数组深入
 
 
 
-# 11.指针传参
+# 12.指针传参
 
 
 
-# 12.函数指针
+# 13.函数指针
 
 
 
